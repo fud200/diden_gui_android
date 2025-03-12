@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package camera;
+
+import "google/protobuf/empty.proto";
+
+// RealSense 카메라 스트리밍 서비스 정의
+service CameraService {
+  rpc StreamFrames (google.protobuf.Empty) returns (stream CameraFrame);
+}
+
+// RealSense 카메라 프레임 메시지 (1대용 간소화)
+message CameraFrame {
+    bytes slave_image = 1;  // 카메라의 이미지 데이터
+    uint32 width = 2;       // 이미지 너비
+    uint32 height = 3;      // 이미지 높이
+}

@@ -1,0 +1,23 @@
+{
+  "_description": "This file is created by CMake to be read by androiddeployqt and should not be modified by hand.",
+  "application-binary": "diden_android_test",
+  "architectures": {
+    "armeabi-v7a" : "arm-linux-androideabi"
+  },
+  
+  
+  
+  
+  
+  
+  
+  "ndk": "/home/khb/Android/Ndk/android-ndk-r27c",
+  "ndk-host": "linux-x86_64",
+  "qml-root-path": "/home/khb/Desktop/hb_ws/diden_gui_android",
+  "qt": "/home/khb/Qt/5.15.2/android",
+  "sdk": "/home/khb/Android/Sdk",
+  "stdcpp-path": "/home/khb/Android/Ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/",
+  "tool-prefix": "llvm",
+  "toolchain-prefix": "llvm",
+  "useLLVM": true
+}

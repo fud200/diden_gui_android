@@ -1,0 +1,71 @@
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+Compiler: /home/khb/Android/Ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ 
+Build flags: -DQT_QML_DEBUG
+Id flags:  
+
+The output was:
+1
+ld.lld: error: unable to find library -lstdc++
+clang++: error: linker command failed with exit code 1 (use -v to see invocation)
+
+
+Performing C++ SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /home/khb/Desktop/hb_ws/diden_gui_android/build/Android_Qt_5_15_2_Clang_Multi_Abi-Debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_aa2c3 && [1/2] Building CXX object CMakeFiles/cmTC_aa2c3.dir/src.cxx.o
+[31mFAILED: [0mCMakeFiles/cmTC_aa2c3.dir/src.cxx.o 
+/home/khb/Android/Ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=armv7-none-linux-androideabi21 --sysroot=/home/khb/Android/Ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DCMAKE_HAVE_LIBC_PTHREAD  -DQT_QML_DEBUG   -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security -fexceptions -frtti -stdlib=libc++  -O2 -g -DNDEBUG -fPIE -std=gnu++17 -MD -MT CMakeFiles/cmTC_aa2c3.dir/src.cxx.o -MF CMakeFiles/cmTC_aa2c3.dir/src.cxx.o.d -o CMakeFiles/cmTC_aa2c3.dir/src.cxx.o -c /home/khb/Desktop/hb_ws/diden_gui_android/build/Android_Qt_5_15_2_Clang_Multi_Abi-Debug/CMakeFiles/CMakeTmp/src.cxx
+/home/khb/Desktop/hb_ws/diden_gui_android/build/Android_Qt_5_15_2_Clang_Multi_Abi-Debug/CMakeFiles/CMakeTmp/src.cxx:13:3: error: use of undeclared identifier 'pthread_cancel'
+   13 |   pthread_cancel(thread);
+      |   ^
+1 error generated.
+ninja: build stopped: subcommand failed.
+
+
+Source file was:
+#include <pthread.h>
+
+static void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_cancel(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/khb/Desktop/hb_ws/diden_gui_android/build/Android_Qt_5_15_2_Clang_Multi_Abi-Debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_dc91b && [1/2] Building CXX object CMakeFiles/cmTC_dc91b.dir/CheckFunctionExists.cxx.o
+[2/2] Linking CXX executable cmTC_dc91b
+[31mFAILED: [0mcmTC_dc91b 
+: && /home/khb/Android/Ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=armv7-none-linux-androideabi21 --sysroot=/home/khb/Android/Ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DQT_QML_DEBUG   -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security -fexceptions -frtti -stdlib=libc++ -DCHECK_FUNCTION_EXISTS=pthread_create -O2 -g -DNDEBUG -Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,--no-undefined-version -Wl,--fatal-warnings -Wl,--gc-sections -Qunused-arguments -Wl,--no-undefined  -Wl,--gc-sections CMakeFiles/cmTC_dc91b.dir/CheckFunctionExists.cxx.o -o cmTC_dc91b  -lpthreads   -latomic -lm && :
+ld.lld: error: unable to find library -lpthreads
+clang++: error: linker command failed with exit code 1 (use -v to see invocation)
+ninja: build stopped: subcommand failed.
+
+
+
+Determining if the function pthread_create exists in the pthread failed with the following output:
+Change Dir: /home/khb/Desktop/hb_ws/diden_gui_android/build/Android_Qt_5_15_2_Clang_Multi_Abi-Debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_f252b && [1/2] Building CXX object CMakeFiles/cmTC_f252b.dir/CheckFunctionExists.cxx.o
+[2/2] Linking CXX executable cmTC_f252b
+[31mFAILED: [0mcmTC_f252b 
+: && /home/khb/Android/Ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=armv7-none-linux-androideabi21 --sysroot=/home/khb/Android/Ndk/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DQT_QML_DEBUG   -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security -fexceptions -frtti -stdlib=libc++ -DCHECK_FUNCTION_EXISTS=pthread_create -O2 -g -DNDEBUG -Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,--no-undefined-version -Wl,--fatal-warnings -Wl,--gc-sections -Qunused-arguments -Wl,--no-undefined  -Wl,--gc-sections CMakeFiles/cmTC_f252b.dir/CheckFunctionExists.cxx.o -o cmTC_f252b  -lpthread   -latomic -lm && :
+ld.lld: error: unable to find library -lpthread
+clang++: error: linker command failed with exit code 1 (use -v to see invocation)
+ninja: build stopped: subcommand failed.
+
+
+
